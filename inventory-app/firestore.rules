@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 사용자 정보는 인증된 사용자만 읽기 가능
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // 물품 정보는 인증된 사용자만 읽기/쓰기 가능
+    match /products/{productId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+
+    // 출입 기록은 인증된 사용자만 읽기/쓰기 가능
+    match /records/{recordId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+  }
+}

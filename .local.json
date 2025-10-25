@@ -1,0 +1,20 @@
+{
+    "permissions": {
+      "allow": [
+        "*",
+        "mcp__firebase__firebase_create_app",
+        "mcp__firebase__firebase_get_sdk_config",
+        "Bash(npm install:*)",
+        "Bash(sudo chown:*)",
+        "Bash(npm run dev:*)",
+        "mcp__firebase__firebase_get_security_rules",
+        "Bash(npx firebase deploy:*)",
+        "Bash(npx:*)"
+      ]
+    },
+    "enableAllProjectMcpServers": true,
+    "enabledMcpjsonServers": [
+      "chrome-devtools"
+    ]
+  }
+  
