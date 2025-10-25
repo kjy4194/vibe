@@ -1,5 +1,6 @@
 [build]
-  publish = "out"
+  base = "inventory-app"
+  publish = "inventory-app/out"
   command = "npm run build"
 
 [[redirects]]
